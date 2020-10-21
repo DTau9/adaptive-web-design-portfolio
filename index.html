@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DTau_portfolio_laconic</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<nav class="nav-menu animated-section_from-left">
+		<a class="nav-menu__item" href="#" data-item="lmarkt">lmarkt</a>
+		<a class="nav-menu__item" href="#" data-item="russgaz">Руссгаз</a>
+		<a class="nav-menu__item" href="#" data-item="kvast">Кваст</a>
+		<a class="nav-menu__item" href="#" data-item="contacts">Контакты</a>
+	</nav>
+
+	<div class="description animated-section_from-left">
+		<ul class="content" data-item="lmarkt">
+			<li>Адаптивная резиновая верстка</li>
+			<li>Лайоут - комбинация Grid + Flexbox</li>
+			<li>Реализация выпадающего меню на чистом Css</li>
+			<li>Карусели выполнены 2-я разными способами:
+				<ul>
+					<li>- на ванильном JS</li>
+					<li>- c использованием OwlCarausel</li>
+				</ul>
+			</li>
+		</ul>
+		<ul class="content" data-item="russgaz">
+			<li>Адаптивная резиновая верстка</li>
+			<li>Реализация выпадающего меню и карусели на чистом Css</li>
+			<li>Свёрстаны все страницы сайта</li>
+			<li>Настраиваемое количество отображаемых в строке элементов каталога с адаптацией к ширине экрана</li>
+		</ul>
+		<ul class="content" data-item="kvast">
+			<li>Экзаменационная работа по окончанию курсов в Html Academy.</li>
+		</ul>
+		<ul class="content" data-item="contacts">
+			<li>contact contact contact contact </li>
+		</ul>
+	</div>
+
+	<div class="view-site animated-section_from-right">
+		<div class="device-switcher">
+			<i class="device-switcher__item device-switcher__item_phone" data-device="phone"></i>
+			<i class="device-switcher__item device-switcher__item_tablet" data-device="tablet"></i>
+			<i class="device-switcher__item device-switcher__item_desktop" data-device="desktop"></i>
+		</div>
+		<div class="selected-device">
+			<div class="site-on-device">
+				<iframe src="https://dtau9.github.io/lmarkt" frameborder="0" data-item="lmarkt"></iframe>
+				<iframe src="https://dtau9.github.io/russgaz" frameborder="0" data-item="russgaz"></iframe>
+				<iframe src="https://dtau9.github.io/kvast" frameborder="0" data-item="kvast"></iframe>
+			</div>
+		</div>
+	</div>
+	<script src="jquery-3.5.1.min.js"></script>
+	<script src="main.js"></script>
+</body>
+<!-- !-------------------     ------- ------ -->
+
+</html>
