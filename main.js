@@ -8,7 +8,8 @@ const $contents = $('.content');
 const $iconSelectDevice = $('.device-switcher__item ');
 const $iframeContainer = $('.site-on-device')
 const $iframe = $('iframe');
-const shiftToZero = 'animated-section_shifted'
+const shiftToZero = 'animated-section_shifted';
+const visibilityVisible = 'visibility-visible';
 
 const state = {
 	section: 'lmarkt',
@@ -18,7 +19,7 @@ const config = {
 	lmarkt: ['phone', 'tablet', 'desktop'],
 	russgaz: ['phone', 'tablet', 'desktop'],
 	kvast: ['desktop'],
-	contacts: ['photo']
+	contacts: ['about']
 };
 
 // обновление приложения
@@ -30,7 +31,6 @@ function updateApp() {
 	$navMenuItems.filter('[data-item=' + state.section + ']').addClass('nav-menu__item_active');
 	$iconSelectDevice.filter('[data-device=' + state.device + ']').addClass('device-switcher__item_active');
 
-	const availableDevices = config[state.section];
 	// отложенный код
 	setTimeout(function () {
 		$contents.removeClass('content_active');
@@ -38,7 +38,7 @@ function updateApp() {
 		$description.addClass(shiftToZero);
 		$viewSite.addClass(shiftToZero);
 
-		// ширина экрана с девайсами 
+		// определяем ширину экрана с девайсами 
 		$body.removeClass().addClass(state.device);
 
 		// добавляем классы на iframe и родительский контейнер
@@ -47,6 +47,7 @@ function updateApp() {
 		$iframeContainer.addClass('site-on-device_' + state.device);
 
 		// отображаем доступные для выбора девайсы
+		const availableDevices = config[state.section];
 		$iconSelectDevice.each(function (index) {
 			// console.log(index)
 			// console.log(this)
@@ -63,9 +64,10 @@ function updateApp() {
 		})
 
 		// показываем iframe
-		$iframe.removeClass('iframe_active');
-		$iframe.filter('[data-item=' + state.section + ']').addClass('iframe_active');
+		$iframe.removeClass(visibilityVisible);
+		$iframe.filter('[data-item=' + state.section + ']').addClass(visibilityVisible);
 
+		// смещение описания
 		if (state.device !== 'phone') {
 			$description.removeClass(shiftToZero);
 		}

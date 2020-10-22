@@ -1,5 +1,5 @@
 :root {
-	--nav-menu_width   : 23.7vw;
+	--nav-menu_width   : 22.8vw;
 	--description_width: 65.3vw;
 }
 
@@ -9,10 +9,19 @@ html {
 }
 
 body {
+	color   : #313628;
 	height  : 100vh;
 	margin  : 0;
 	overflow: hidden;
 	width   : 100vw;
+}
+
+.available-view {
+	display    : none;
+	font       : 3vw/100vh Verdana, Geneva, Tahoma, sans-serif;
+	text-align : center;
+	text-shadow: 0.2vw 0.2vw lightsteelblue;
+	width      : 100vw;
 }
 
 .content {
@@ -24,7 +33,7 @@ body {
 }
 
 .animated-section {
-	transition: transform 0.7s;
+	transition: transform 0.7s ease-out;
 }
 
 .animated-section_from-left {
@@ -34,7 +43,7 @@ body {
 
 .animated-section_from-right {
 	right    : 0;
-	transform: translateX(100%);
+	transform: translateX(150%);
 }
 
 .animated-section_shifted {
@@ -54,21 +63,26 @@ body {
 	transform: translateX(100%);
 }
 
-.iframe_active {
+.nav-menu__item_active {
+	color: #895055;
+}
+
+.visibility-visible {
 	visibility: visible !important;
 }
 
 .nav-menu,
 .description,
 .view-site {
-	box-sizing: border-box;
-	height    : 100%;
-	overflow  : hidden;
-	position  : absolute;
+	box-sizing   : border-box;
+	height       : 100%;
+	/* overflow  : hidden; */
+	position     : absolute;
 }
 
 .nav-menu::after,
-.description::after {
+.description::after,
+.contacts::before {
 	content  : "";
 	display  : block;
 	height   : 200%;
@@ -79,38 +93,38 @@ body {
 }
 
 .nav-menu {
-	padding-top: 119rem;
-	width      : var(--nav-menu_width);
-	z-index    : 10;
+	display           : flex;
+	flex-direction    : column;
+	gap               : 77rem;
+	justify-content   : flex-start;
+	padding-right     : 5.4%;
+	padding           : 121rem 5.1% 0 2.3%;
+	/* text-shadow    : 0.2vw 0.2vw lightsteelblue; */
+	width             : var(--nav-menu_width);
+	z-index           : 10;
 }
 
 .nav-menu::after {
-	background-color: #333745;
-	top             : -15%;
-	right           : 24.9%;
+	background-color: #9B9B7A;
+	top             : -90%;
+	right           : 3.7%;
 }
 
 .nav-menu__item {
-	color          : #fff;
-	display        : block;
-	font-size      : 62rem;
-	margin-bottom  : 77rem;
-	letter-spacing : 0.03em;
-	padding-left   : 45rem;
-	text-decoration: none;
-}
-
-.nav-menu__item_active {
-	color: green;
+	cursor        : pointer;
+	display       : block;
+	font-size     : 62rem;
+	letter-spacing: 0.03em;
+	overflow-wrap : break-word;
 }
 
 .description {
-	padding: 104rem 4.7% 0 23.1%;
-	width  : var(--description_width);
+	padding       : 106rem 4.2% 0 23.1%;
+	/* text-shadow: 0.2vw 0.2vw lightsteelblue; */
+	width         : var(--description_width);
 }
 
 .description ul {
-	color      : #fff;
 	font-size  : 30rem;
 	line-height: 40rem;
 	list-style : none;
@@ -119,7 +133,7 @@ body {
 
 .description ul li {
 	letter-spacing: 0.05em;
-	margin-bottom : 33rem;
+	margin-bottom : 36rem;
 }
 
 .description ul ul {
@@ -127,9 +141,9 @@ body {
 }
 
 .description::after {
-	background-color: #FE5F55;
-	top             : -22%;
-	right           : 7.4%;
+	background-color: #F1DCA7;
+	top             : -90%;
+	right           : 1.6%;
 }
 
 body.phone .view-site {
@@ -144,17 +158,21 @@ body.desktop .view-site {
 	width: calc(100vw - var(--nav-menu_width));
 }
 
+body.about .view-site {
+	width: calc(100vw - var(--nav-menu_width));
+}
+
 .device-switcher {
 	align-items    : center;
 	display        : flex;
-	gap            : 12%;
-	height         : 110rem;
+	gap            : 8%;
+	height         : 62rem;
 	justify-content: center;
-	top            : 65rem;
+	top            : 86rem;
 	left           : 50%;
 	position       : absolute;
 	transform      : translateX(-50%);
-	width          : 400rem;
+	width          : 350rem;
 }
 
 .device-switcher__item {
@@ -175,18 +193,18 @@ body.desktop .view-site {
 }
 
 .device-switcher__item_phone {
-	background-image: url(img/phone-small.svg);
-	width           : 35rem;
+	background-image: url(../img/phone-small.svg);
+	width           : 14%;
 }
 
 .device-switcher__item_tablet {
-	background-image: url(img/tablet-small.svg);
-	width           : 106rem;
+	background-image: url(../img/tablet-small.svg);
+	width           : 31%;
 }
 
 .device-switcher__item_desktop {
-	background-image: url(img/desktop-small.svg);
-	width           : 144rem;
+	background-image: url(../img/desktop-small.svg);
+	width           : 36%;
 }
 
 .selected-device {
@@ -212,7 +230,7 @@ body.desktop .view-site {
 
 /* styles for devices */
 .site-on-device_phone {
-	background-image: url(img/phone.svg);
+	background-image: url(../img/phone.svg);
 	height          : 607rem;
 	left            : 50%;
 	transform       : translateX(-50%);
@@ -230,7 +248,7 @@ body.desktop .view-site {
 }
 
 .site-on-device_tablet {
-	background-image: url(img/tablet.svg);
+	background-image: url(../img/tablet.svg);
 	height          : 835rem;
 	left            : 50%;
 	top             : 15%;
@@ -248,10 +266,10 @@ body.desktop .view-site {
 }
 
 .site-on-device_desktop {
-	background-image: url(img/desktop.svg);
+	background-image: url(../img/desktop.svg);
 	height          : 1164rem;
 	left            : 50%;
-	top             : 0%;
+	top             : 2%;
 	transform       : translateX(-50%) scale(0.6);
 	width           : 1971rem;
 }
@@ -266,3 +284,76 @@ body.desktop .view-site {
 }
 
 /* /styles for devices */
+
+.contacts {
+	align-items    : center;
+	display        : flex;
+	flex-direction : column;
+	height         : 100%;
+	justify-content: space-evenly;
+	visibility     : hidden;
+	width          : 100%;
+}
+
+.contacts::before {
+	background-color: #F6F6F3;
+	top             : -10%;
+	left            : -10%;
+}
+
+body.about .contacts {
+	visibility: visible;
+}
+
+.socialnet {
+	display        : flex;
+	gap            : 8%;
+	height         : 70rem;
+	justify-content: space-between;
+	width          : 400rem;
+}
+
+.socialnet__item {
+	background-repeat  : no-repeat;
+	background-position: center;
+	background-size    : contain;
+	height             : 100%;
+	width              : 25%;
+}
+
+.socialnet__item_vk {
+	background-image: url(../img/vkontakte-icon_color.svg);
+}
+
+.socialnet__item_ig {
+	background-image: url(../img/instagram-icon_color.png);
+}
+
+.socialnet__item_telegram {
+	background-image: url(../img/telegram-icon_color.svg);
+}
+
+.contacts__photo {
+	border-radius: 20rem;
+	background   : url(../img/photo_dt.jpg) center/contain no-repeat;
+	height       : 500rem;
+	width        : 500rem;
+}
+
+@media (max-width: 1600px) {
+	html {
+		font-size: 0.8px;
+	}
+}
+
+@media (max-width: 1279px) {
+	.available-view {
+		display: block;
+	}
+
+	.nav-menu,
+	.description,
+	.view-site {
+		display: none;
+	}
+}
