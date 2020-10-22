@@ -269,7 +269,7 @@ body.about .view-site {
 	background-image: url(../img/desktop.svg);
 	height          : 1164rem;
 	left            : 50%;
-	top             : 2%;
+	top             : 0%;
 	transform       : translateX(-50%) scale(0.6);
 	width           : 1971rem;
 }
