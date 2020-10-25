@@ -208,12 +208,12 @@ body.about .view-site {
 }
 
 .selected-device {
-	height   : 100vh;
-	left     : 50%;
-	top      : 50%;
-	transform: translate(-50%, -50%);
-	position : absolute;
-	z-index  : -1;
+	height      : 100vh;
+	left        : 50%;
+	top         : 50%;
+	/* transform: translate(-50%, -50%); */
+	/* position : absolute; */
+	z-index     : -1;
 }
 
 .site-on-device {
@@ -230,21 +230,21 @@ body.about .view-site {
 
 /* styles for devices */
 .site-on-device_phone {
-	background-image: url(../img/phone.svg);
-	height          : 607rem;
-	left            : 50%;
-	transform       : translateX(-50%);
-	top             : 25%;
-	width           : 355rem;
+	background-image   : url(../img/phone.svg);
+	height             : 607rem;
+	left               : 50%;
+	/* transform       : translateX(-50%); */
+	top                : 25%;
+	width              : 355rem;
 }
 
 .site-on-device_phone iframe {
-	height   : 480rem;
-	left     : 50%;
-	transform: translateX(-50%);
-	position : absolute;
-	top      : 5.4%;
-	width    : 320rem;
+	height         : 480rem;
+	left           : 4.6%;
+	/* transform   : translateX(-50%); */
+	/* position    : absolute; */
+	top            : 5.4%;
+	width          : 320rem;
 }
 
 .site-on-device_tablet {
