@@ -146,6 +146,13 @@ body {
 	right           : 1.6%;
 }
 
+.view-site {
+	align-items    : center;
+	display        : flex;
+	flex-direction : column;
+	justify-content: flex-start;
+}
+
 body.phone .view-site {
 	width: calc(100vw - var(--description_width));
 }
@@ -168,10 +175,7 @@ body.about .view-site {
 	gap            : 8%;
 	height         : 62rem;
 	justify-content: center;
-	top            : 86rem;
-	left           : 50%;
-	position       : absolute;
-	transform      : translateX(-50%);
+	margin-top     : 86rem;
 	width          : 350rem;
 }
 
@@ -208,12 +212,8 @@ body.about .view-site {
 }
 
 .selected-device {
-	height      : 100vh;
-	left        : 50%;
-	top         : 50%;
-	/* transform: translate(-50%, -50%); */
-	/* position : absolute; */
-	z-index     : -1;
+	height : 100vh;
+	z-index: -1;
 }
 
 .site-on-device {
@@ -230,57 +230,47 @@ body.about .view-site {
 
 /* styles for devices */
 .site-on-device_phone {
-	background-image   : url(../img/phone.svg);
-	height             : 607rem;
-	left               : 50%;
-	/* transform       : translateX(-50%); */
-	top                : 25%;
-	width              : 355rem;
+	background-image: url(../img/phone.svg);
+	height          : 607rem;
+	margin-top      : 107rem;
+	width           : 355rem;
 }
 
 .site-on-device_phone iframe {
-	height         : 480rem;
-	left           : 4.6%;
-	/* transform   : translateX(-50%); */
-	/* position    : absolute; */
-	top            : 5.4%;
-	width          : 320rem;
+	height: 480rem;
+	left  : 4.9%;
+	top   : 5.4%;
+	width : 320rem;
 }
 
 .site-on-device_tablet {
 	background-image: url(../img/tablet.svg);
 	height          : 835rem;
-	left            : 50%;
-	top             : 15%;
-	transform       : translateX(-50%) scale(0.8);
+	margin-top      : 47rem;
+	transform       : scale(0.9);
 	width           : 1209rem;
 }
 
 .site-on-device_tablet iframe {
-	height   : 768rem;
-	left     : 3.1%;
-	top      : 50%;
-	transform: translateY(-50%);
-	position : absolute;
-	width    : 1024rem;
+	height: 768rem;
+	left  : 3.1%;
+	top   : 4%;
+	width : 1024rem;
 }
 
 .site-on-device_desktop {
 	background-image: url(../img/desktop.svg);
 	height          : 1164rem;
-	left            : 50%;
-	top             : 0%;
-	transform       : translateX(-50%) scale(0.6);
+	transform       : scale(0.6);
+	margin-top      : -100rem;
 	width           : 1971rem;
 }
 
 .site-on-device_desktop iframe {
-	height   : 1024rem;
-	top      : 2.4%;
-	left     : 50%;
-	transform: translateX(-50%);
-	position : absolute;
-	width    : 1920rem;
+	height: 1024rem;
+	top   : 2.4%;
+	left  : 1.3%;
+	width : 1920rem;
 }
 
 /* /styles for devices */
