@@ -39,7 +39,7 @@ function updateApp() {
 		$viewSite.addClass(shiftToZero);
 
 		// определяем ширину экрана с девайсами 
-		$body.removeClass().addClass(state.device);
+		$body.removeClass().addClass(state.device).addClass(state.section);
 
 		// добавляем классы на iframe и родительский контейнер
 		// удаляем все классы, кроме одного
