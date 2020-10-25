@@ -74,10 +74,10 @@ body {
 .nav-menu,
 .description,
 .view-site {
-	box-sizing   : border-box;
-	height       : 100%;
-	/* overflow  : hidden; */
-	position     : absolute;
+	box-sizing: border-box;
+	height    : 100%;
+	overflow  : hidden;
+	position  : absolute;
 }
 
 .nav-menu::after,
@@ -98,7 +98,7 @@ body {
 	gap               : 77rem;
 	justify-content   : flex-start;
 	padding-right     : 5.4%;
-	padding           : 121rem 5.1% 0 2.3%;
+	padding           : 121rem 4% 0 2.3%;
 	/* text-shadow    : 0.2vw 0.2vw lightsteelblue; */
 	width             : var(--nav-menu_width);
 	z-index           : 10;
@@ -113,7 +113,7 @@ body {
 .nav-menu__item {
 	cursor        : pointer;
 	display       : block;
-	font-size     : 62rem;
+	font-size     : 57rem;
 	letter-spacing: 0.03em;
 	overflow-wrap : break-word;
 }
@@ -194,7 +194,7 @@ body.about .view-site {
 
 .device-switcher__item_phone {
 	background-image: url(../img/phone-small.svg);
-	width           : 14%;
+	width           : 9%;
 }
 
 .device-switcher__item_tablet {
