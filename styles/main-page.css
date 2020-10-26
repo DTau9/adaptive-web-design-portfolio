@@ -38,7 +38,7 @@ body.kvast {
 	--nav-menu_bg                : #B08969;
 	--nav-menu__item_color       : #DFE0DF;
 	--nav-menu__item_color_active: #834700;
-	--description_bg             : ;
+	--description_bg             : #fff;
 }
 
 body.about {
@@ -130,8 +130,7 @@ body.about {
 	background-color: var(--nav-menu_bg);
 	top             : -90%;
 	right           : 3.7%;
-	transition      : 0.35s;
-	transition-delay: 0.35s;
+	transition      : 0.7s;
 }
 
 .nav-menu__item {
@@ -141,6 +140,7 @@ body.about {
 	font-size     : 57rem;
 	letter-spacing: 0.03em;
 	overflow-wrap : break-word;
+	transition    : 0.7s;
 }
 
 .nav-menu__item_active {
@@ -167,7 +167,9 @@ body.about {
 }
 
 .description ul ul {
-	margin-top: 33rem;
+	margin-top  : 33rem;
+	line-height : 20rem;
+	padding-left: 20rem;
 }
 
 .description::after {
@@ -271,48 +273,48 @@ body.about .view-site {
 /* styles for devices */
 .site-on-device_phone {
 	background-image: url(../img/phone.svg);
-	height          : 607rem;
-	width           : 355rem;
+	height          : 607px;
+	width           : 355px;
 }
 
 .site-on-device_phone iframe {
-	height: 480rem;
+	height: 480px;
 	left  : 4.9%;
 	top   : 5.4%;
-	width : 320rem;
+	width : 320px;
 }
 
 .site-on-device_tablet {
 	background-image: url(../img/tablet.svg);
-	height          : 835rem;
+	height          : 835px;
 	transform       : scale(0.9);
-	width           : 1209rem;
+	width           : 1209px;
 }
 
 .site-on-device_tablet iframe {
-	height: 768rem;
+	height: 768px;
 	left  : 3.1%;
 	top   : 4%;
-	width : 1028rem;
+	width : 1028px;
 }
 
 .site-on-device_desktop {
 	background-image: url(../img/desktop.svg);
-	height          : 1164rem;
-	width           : 1971rem;
+	height          : 1164px;
+	width           : 1971px;
 	transform       : scale(0.6);
 	left            : 50%;
 	top             : 50%;
 	position        : absolute;
-	margin-top      : -582rem;
-	margin-left     : -985rem
+	margin-top      : -582px;
+	margin-left     : -985px;
 }
 
 .site-on-device_desktop iframe {
-	height: 1024rem;
+	height: 1024px;
 	top   : 2.4%;
 	left  : 1.3%;
-	width : 1920rem;
+	width : 1920px;
 }
 
 /* /styles for devices */
