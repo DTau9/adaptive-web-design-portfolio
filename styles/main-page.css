@@ -1,6 +1,10 @@
 :root {
-	--nav-menu_width   : 22.8vw;
-	--description_width: 65.3vw;
+	--nav-menu_width             : 22.8vw;
+	--description_width          : 65.3vw;
+	--nav-menu_bg                : #6BBAA3;
+	--nav-menu__item_color       : #FFE6FF;
+	--nav-menu__item_color_active: #A0148E;
+	--description_bg             : #AE7AA3;
 }
 
 html {

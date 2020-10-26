@@ -8,9 +8,10 @@
 	<link rel="stylesheet" href="styles/main-page.css">
 	<link sizes="16x16" rel="icon" type="image/png" href="img/favicon.png">
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="phone">
 
 	<div class="available-view">
 		Просмотр возможен при ширине экрана не менее 1600px.
@@ -24,7 +25,7 @@
 	</nav>
 
 	<div class="description animated-section_from-left">
-		<ul class="content" data-item="lmarkt">
+		<ul class="content content_active" data-item="lmarkt">
 			<li>Адаптивная резиновая верстка</li>
 			<li>Лайоут - комбинация Grid + Flexbox</li>
 			<li>Реализация выпадающего меню на чистом Css</li>
@@ -38,8 +39,7 @@
 		<ul class="content" data-item="russgaz">
 			<li>Адаптивная резиновая верстка</li>
 			<li>Реализация выпадающего меню и карусели на чистом Css</li>
-			<li>Свёрстаны все страницы сайта</li>
-			<li>Настраиваемое количество отображаемых в строке элементов каталога с адаптацией к ширине экрана</li>
+			<li>Гибкая настройка количества элементов в строке</li>
 		</ul>
 		<ul class="content" data-item="kvast">
 			<li>Экзаменационная работа по окончанию курсов в Html Academy.</li>
@@ -51,12 +51,15 @@
 
 	<div class="view-site animated-section_from-right">
 		<div class="device-switcher">
-			<i class="device-switcher__item device-switcher__item_phone" data-device="phone"></i>
-			<i class="device-switcher__item device-switcher__item_tablet" data-device="tablet"></i>
-			<i class="device-switcher__item device-switcher__item_desktop" data-device="desktop"></i>
+			<i class="device-switcher__item device-switcher__item_phone device-switcher__item_visible"
+				data-device="phone"></i>
+			<i class="device-switcher__item device-switcher__item_tablet device-switcher__item_visible"
+				data-device="tablet"></i>
+			<i class="device-switcher__item device-switcher__item_desktop device-switcher__item_visible"
+				data-device="desktop"></i>
 		</div>
 		<div class="selected-device">
-			<div class="site-on-device">
+			<div class="site-on-device site-on-device_phone">
 				<iframe src="https://dtau9.github.io/lmarkt" frameborder="0" data-item="lmarkt"></iframe>
 				<iframe src="https://dtau9.github.io/russgaz" frameborder="0" data-item="russgaz"></iframe>
 				<iframe src="https://dtau9.github.io/kvast" frameborder="0" data-item="kvast"></iframe>
