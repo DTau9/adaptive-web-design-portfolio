@@ -1,11 +1,10 @@
 :root {
-	--nav-menu_width        : 22.8vw;
-	--description_width     : 65.3vw;
-	--color-transition-speed: 1.5s;
+	--nav-menu_width   : 22.8vw;
+	--description_width: 65.3vw;
 }
 
 html {
-	font-family: 'Roboto Condensed', sans-serif;
+	font-family: Roboto, sans-serif;
 	font-size  : 1px;
 }
 
@@ -18,26 +17,31 @@ body {
 }
 
 body.lmarkt {
-	--nav-menu_background   : #FFF4E1;
-	--nav-menu_color-active : #50424F;
-	--description_background: #D9BCAA;
+	--nav-menu_bg                : #6BBAA3;
+	--nav-menu__item_color       : #FFE6FF;
+	--nav-menu__item_color_active: #A0148E;
+	--description_bg             : #AE7AA3;
 }
 
 body.russgaz {
-	--nav-menu_background   : #00A7FA;
-	--nav-menu_color-active : #F9F871;
-	--description_background: #A0F68A;
+	--nav-menu_bg                : #017DD8;
+	--nav-menu__item_color       : #E6F4F1;
+	--nav-menu__item_color_active: #002670;
+	--description_bg             : #A4ABBD;
 }
 
 body.kvast {
-	--nav-menu_background   : #834700;
-	--nav-menu_color-active : #00C9AD;
-	--description_background: #FFEACE;
+	--nav-menu_bg                : #B08969;
+	--nav-menu__item_color       : #DFE0DF;
+	--nav-menu__item_color_active: #834700;
+	--description_bg             : ;
 }
 
-body.contacts {
-	--nav-menu_background  : #F6F6F3;
-	--nav-menu_color-active: #2F4858;
+body.about {
+	--nav-menu_bg                : #C3BAD8;
+	--nav-menu__item_color       : #D7E5E8;
+	--nav-menu__item_color_active: #00486D;
+	--description_bg             : #FCF7FF;
 }
 
 .available-view {
@@ -118,16 +122,16 @@ body.contacts {
 	z-index           : 10;
 }
 
-
-
 .nav-menu::after {
-	background-color: var(--nav-menu_background);
+	background-color: var(--nav-menu_bg);
 	top             : -90%;
 	right           : 3.7%;
-	transition      : background var(--color-transition-speed);
+	transition      : 0.35s;
+	transition-delay: 0.35s;
 }
 
 .nav-menu__item {
+	color         : var(--nav-menu__item_color);
 	cursor        : pointer;
 	display       : block;
 	font-size     : 57rem;
@@ -136,15 +140,14 @@ body.contacts {
 }
 
 .nav-menu__item_active {
-	color     : var(--nav-menu_color-active);
-	cursor    : default;
-	transition: color var(--color-transition-speed);
+	color : var(--nav-menu__item_color_active);
+	cursor: default;
 }
 
 .description {
-	padding   : 106rem 4.2% 0 23.1%;
-	transition: background var(--color-transition-speed);
-	width     : var(--description_width);
+	padding       : 106rem 4.2% 0 23.1%;
+	/* text-shadow: 0.2vw 0.2vw lightsteelblue; */
+	width         : var(--description_width);
 }
 
 .description ul {
@@ -164,7 +167,7 @@ body.contacts {
 }
 
 .description::after {
-	background-color: var(--description_background);
+	background-color: var(--description_bg);
 	top             : -90%;
 	right           : 1.6%;
 }
@@ -190,20 +193,20 @@ body.desktop .view-site {
 }
 
 body.about .view-site {
-	width: calc(100vw - var(--nav-menu_width));
+	width           : calc(100vw - var(--nav-menu_width));
+	background-color: var(--description_bg);
+	outline         : 10000rem solid var(--description_bg);
 }
 
 .device-switcher {
 	align-items    : center;
-	box-sizing     : border-box;
 	display        : flex;
 	gap            : 10%;
 	height         : 15%;
 	justify-content: center;
-	flex-shrink    : 0;
-	min-height     : 65rem;
-	padding-top    : 55rem;
 	width          : 350rem;
+	flex-shrink    : 0;
+
 }
 
 .device-switcher__item {
@@ -215,16 +218,15 @@ body.about .view-site {
 	flex               : 0 0 auto;
 	height             : 65rem;
 	opacity            : 0.4;
-	transition         : transform 0.3s;
 	width              : 100rem;
-}
-
-.device-switcher__item:hover {
-	opacity: 1;
 }
 
 .device-switcher__item_active {
 	cursor : default;
+	opacity: 1;
+}
+
+.device-switcher__item:hover {
 	opacity: 1;
 }
 
@@ -247,7 +249,6 @@ body.about .view-site {
 	align-items: center;
 	display    : flex;
 	flex-grow  : 1;
-	position   : relative;
 	z-index    : -1;
 }
 
@@ -280,7 +281,7 @@ body.about .view-site {
 .site-on-device_tablet {
 	background-image: url(../img/tablet.svg);
 	height          : 835rem;
-	transform       : scale(0.8);
+	transform       : scale(0.9);
 	width           : 1209rem;
 }
 
@@ -288,7 +289,7 @@ body.about .view-site {
 	height: 768rem;
 	left  : 3.1%;
 	top   : 4%;
-	width : 1024rem;
+	width : 1028rem;
 }
 
 .site-on-device_desktop {
@@ -323,7 +324,7 @@ body.about .view-site {
 	width          : 100%;
 }
 
-body.contacts .my-contacts {
+body.about .my-contacts {
 	visibility: visible;
 }
 
@@ -339,8 +340,14 @@ body.contacts .my-contacts {
 	background-repeat  : no-repeat;
 	background-position: center;
 	background-size    : contain;
+	display            : block;
 	height             : 100%;
+	opacity            : 0.5;
 	width              : 25%;
+}
+
+.socialnet__item:hover {
+	opacity: 1;
 }
 
 .socialnet__item_vk {

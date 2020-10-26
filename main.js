@@ -24,12 +24,17 @@ const config = {
 
 // обновление приложения
 function updateApp() {
-	$navMenuItems.removeClass('nav-menu__item_active');
-	$description.removeClass(shiftToZero);
-	$viewSite.removeClass(shiftToZero);
-	$iconSelectDevice.removeClass('device-switcher__item_active');
-	$navMenuItems.filter('[data-item=' + state.section + ']').addClass('nav-menu__item_active');
-	$iconSelectDevice.filter('[data-device=' + state.device + ']').addClass('device-switcher__item_active');
+	if ($body.hasClass(state.section) && $body.hasClass(state.device)) {
+		return;
+	} else {
+		$navMenuItems.removeClass('nav-menu__item_active');
+		$description.removeClass(shiftToZero);
+		$viewSite.removeClass(shiftToZero);
+		$iconSelectDevice.removeClass('device-switcher__item_active');
+		$navMenuItems.filter('[data-item=' + state.section + ']').addClass('nav-menu__item_active');
+		$iconSelectDevice.filter('[data-device=' + state.device + ']').addClass('device-switcher__item_active');
+	}
+
 
 	// отложенный код
 	setTimeout(function () {
@@ -90,8 +95,8 @@ function setDeviceState(deviceName) {
 // класс с transition накидываем после загрузки документа
 $(document).ready(function () {
 	setSectionState('lmarkt');
-	$sections.addClass(shiftToZero);
 	$sections.addClass('animated-section');
+	$sections.addClass(shiftToZero);
 })
 
 $navMenuItems.click(function (e) {
