@@ -184,6 +184,7 @@ body.about {
 	flex-direction : column;
 	gap            : 2%;
 	justify-content: flex-start;
+	min-height     : 660px;
 }
 
 body.phone .view-site {
@@ -398,7 +399,7 @@ body.about .my-contacts {
 	}
 
 	.site-on-device_tablet {
-		transform: translate(-50%, -50%) scale(0.7);
+		transform: translate(-50%, -50%) scale(0.6);
 	}
 
 	.site-on-device_desktop {
