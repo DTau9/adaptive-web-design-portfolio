@@ -7,7 +7,7 @@ const $navMenuItems = $('.nav-menu__item');
 const $contents = $('.content');
 const $iconSelectDevice = $('.device-switcher__item ');
 const $iframeContainer = $('.site-on-device')
-const $iframe = $('iframe');
+const $iframe = $('.iframe-wrapper');
 const shiftToZero = 'animated-section_shifted';
 const visibilityVisible = 'visibility-visible';
 
