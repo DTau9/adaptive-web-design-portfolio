@@ -1,6 +1,5 @@
-<svg width="1200" height="834" viewBox="0 0 1200 834" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="31.5" y="802.5" width="771" height="1027" transform="rotate(-90 31.5 802.5)" stroke="black" stroke-width="3"/>
-<rect x="1.5" y="832.5" width="831" height="1197" rx="21.5" transform="rotate(-90 1.5 832.5)" stroke="black" stroke-width="3"/>
-<circle cx="17" cy="417" r="3.5" stroke="black" stroke-width="3"/>
-<circle cx="1130" cy="417" r="41.5" transform="rotate(-90 1130 417)" stroke="black" stroke-width="3"/>
+<svg width="1002" height="696" viewBox="0 0 1002 696" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1" y="695" width="693.467" height="1000" rx="20" transform="rotate(-90 1 695)" stroke="black" stroke-width="2"/>
+<circle cx="944.882" cy="348.266" r="33.5008" transform="rotate(-90 944.882 348.266)" stroke="black" stroke-width="2"/>
+<circle cx="14" cy="348" r="6" stroke="black" stroke-width="2"/>
 </svg>
