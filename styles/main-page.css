@@ -363,7 +363,7 @@ body.about .my-contacts {
 	display            : block;
 	height             : 100%;
 	opacity            : 0.5;
-	width              : 25%;
+	width              : 20%;
 }
 
 .socialnet__item:hover {
@@ -380,6 +380,10 @@ body.about .my-contacts {
 
 .socialnet__item_telegram {
 	background-image: url(../img/telegram-icon_color.svg);
+}
+
+.socialnet__item_linkedin {
+	background-image: url(../img/linkedin-icon_color.svg);
 }
 
 .contacts__photo {
