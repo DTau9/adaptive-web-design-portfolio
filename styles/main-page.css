@@ -48,6 +48,13 @@ body.about {
 	--description_bg             : #FCF7FF;
 }
 
+body.tt {
+	--nav-menu_bg                : #579395;
+	--nav-menu__item_color       : #BEFCFE;
+	--nav-menu__item_color_active: #891F00;
+	--description_bg             : #FCF7FF;
+}
+
 .available-view {
 	display    : none;
 	font       : 3vw/100vh Verdana, Geneva, Tahoma, sans-serif;
@@ -136,7 +143,7 @@ body.about {
 	color         : var(--nav-menu__item_color);
 	cursor        : pointer;
 	display       : block;
-	font-size     : 57rem;
+	font-size     : 54rem;
 	letter-spacing: 0.03em;
 	overflow-wrap : break-word;
 	transition    : 0.7s;
@@ -195,14 +202,18 @@ body.tablet .view-site {
 }
 
 body.desktop .view-site {
-	/* width: calc(100vw - var(--nav-menu_width)); */
-	width: 100%;
+	width   : calc(100vw - var(--nav-menu_width));
+	/* width: 100%; */
 }
 
 body.about .view-site {
 	width           : calc(100vw - var(--nav-menu_width));
 	background-color: var(--description_bg);
 	outline         : 10000rem solid var(--description_bg);
+}
+
+body.tt .view-site {
+	width: calc(100vw - var(--nav-menu_width));
 }
 
 .device-switcher {
@@ -319,7 +330,7 @@ body.about .view-site {
 	height          : 1164px;
 	left            : 50%;
 	top             : 50%;
-	transform       : translate(-50%, -50%) scale(0.6);
+	transform       : translate(-50%, -50%) scale(0.55);
 	position        : absolute;
 	width           : 1971px;
 }
@@ -332,6 +343,24 @@ body.about .view-site {
 }
 
 /* /styles for devices */
+
+.technical-task {
+	box-sizing: border-box;
+	height    : 100%;
+	visibility: hidden;
+	padding   : 10rem 20rem;
+	position  : absolute;
+	width     : 100%;
+}
+
+.technical-task iframe {
+	height: 100%;
+	width : 100%;
+}
+
+body.tt .technical-task {
+	visibility: visible;
+}
 
 .my-contacts {
 	align-items    : center;

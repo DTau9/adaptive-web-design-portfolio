@@ -8,6 +8,7 @@ const $contents = $('.content');
 const $iconSelectDevice = $('.device-switcher__item ');
 const $iframeContainer = $('.site-on-device')
 const $iframe = $('.iframe-wrapper');
+const $iframeForTechnicalTask = $('.technical-task iframe');
 const shiftToZero = 'animated-section_shifted';
 const visibilityVisible = 'visibility-visible';
 
@@ -19,7 +20,8 @@ const config = {
 	lmarkt: ['phone', 'tablet', 'desktop'],
 	russgaz: ['phone', 'tablet', 'desktop'],
 	kvast: ['desktop'],
-	contacts: ['about']
+	contacts: ['about'],
+	techtask: ['tt']
 };
 
 // обновление приложения
@@ -68,6 +70,9 @@ function updateApp() {
 			}
 		})
 
+		//условие для технических задач
+		$iframeForTechnicalTask.attr('src', state.urlSite);
+
 		// показываем iframe
 		$iframe.removeClass(visibilityVisible);
 		$iframe.filter('[data-item=' + state.section + ']').addClass(visibilityVisible);
@@ -87,6 +92,11 @@ function setSectionState(sectionName) {
 	updateApp();
 }
 
+function showTechnicalTask(url) {
+	state.urlSite = url;
+	// updateApp();
+}
+
 function setDeviceState(deviceName) {
 	state.device = deviceName;
 	updateApp();
@@ -103,7 +113,10 @@ $navMenuItems.click(function (e) {
 	const htmlNode = e.target;
 	const $jQeryNode = $(htmlNode);
 	const sectionName = $jQeryNode.attr('data-item');
+	const addressSite = $jQeryNode.attr('data-urlsite');
+	showTechnicalTask(addressSite);
 	setSectionState(sectionName);
+
 })
 
 $iconSelectDevice.click(function (e) {
