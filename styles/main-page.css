@@ -115,15 +115,14 @@ body.about {
 }
 
 .nav-menu {
-	display           : flex;
-	flex-direction    : column;
-	gap               : 77rem;
-	justify-content   : flex-start;
-	padding-right     : 5.4%;
-	padding           : 121rem 4% 0 2.3%;
-	/* text-shadow    : 0.2vw 0.2vw lightsteelblue; */
-	width             : var(--nav-menu_width);
-	z-index           : 10;
+	display        : flex;
+	flex-direction : column;
+	gap            : 77rem;
+	justify-content: flex-start;
+	padding-right  : 5.4%;
+	padding        : 121rem 4% 0 2.3%;
+	width          : var(--nav-menu_width);
+	z-index        : 10;
 }
 
 .nav-menu::after {
@@ -196,7 +195,8 @@ body.tablet .view-site {
 }
 
 body.desktop .view-site {
-	width: calc(100vw - var(--nav-menu_width));
+	/* width: calc(100vw - var(--nav-menu_width)); */
+	width: 100%;
 }
 
 body.about .view-site {
@@ -349,11 +349,8 @@ body.about .my-contacts {
 }
 
 .socialnet {
-	display        : flex;
-	gap            : 8%;
-	height         : 70rem;
-	justify-content: space-between;
-	width          : 400rem;
+	display: flex;
+	gap    : 20rem;
 }
 
 .socialnet__item {
@@ -361,9 +358,9 @@ body.about .my-contacts {
 	background-position: center;
 	background-size    : contain;
 	display            : block;
-	height             : 100%;
+	height             : 70rem;
 	opacity            : 0.5;
-	width              : 20%;
+	width              : 70rem;
 }
 
 .socialnet__item:hover {
@@ -375,7 +372,11 @@ body.about .my-contacts {
 }
 
 .socialnet__item_ig {
-	background-image: url(../img/instagram-icon_color.png);
+	background-image: url(../img/instagram-icon_color.svg);
+}
+
+.socialnet__item_github {
+	background-image: url(../img/github-icon.svg);
 }
 
 .socialnet__item_telegram {
