@@ -366,8 +366,9 @@ body.tt .technical-task {
 	align-items    : center;
 	display        : flex;
 	flex-direction : column;
+	gap            : 8%;
 	height         : 100%;
-	justify-content: space-evenly;
+	justify-content: center;
 	position       : absolute;
 	visibility     : hidden;
 	width          : 100%;
@@ -385,35 +386,33 @@ body.about .my-contacts {
 .socialnet__item {
 	background-repeat  : no-repeat;
 	background-position: center;
-	background-size    : contain;
+	background-size    : 70rem;
 	display            : block;
-	height             : 70rem;
+	height             : 90rem;
 	opacity            : 0.5;
-	width              : 70rem;
+	width              : 90rem;
 }
 
 .socialnet__item:hover {
 	opacity: 1;
 }
 
-.socialnet__item_vk {
-	background-image: url(../img/vkontakte-icon_color.svg);
-}
-
-.socialnet__item_ig {
-	background-image: url(../img/instagram-icon_color.svg);
-}
 
 .socialnet__item_github {
-	background-image: url(../img/github-icon.svg);
+	background-image: url(../img/github_black_circle.svg);
 }
 
 .socialnet__item_telegram {
-	background-image: url(../img/telegram-icon_color.svg);
+	background-image: url(../img/telegram_black_circle.svg);
 }
 
 .socialnet__item_linkedin {
-	background-image: url(../img/linkedin-icon_color.svg);
+	background-image: url(../img/linkedin_black_circle.svg);
+}
+
+.socialnet__item_mail {
+	background-image: url(../img/mail_black_circle.svg);
+	background-size : 70rem;
 }
 
 .contacts__photo {
