@@ -69,9 +69,8 @@ body.desktop .view-site {
 }
 
 body.desktop .nav-menu {
-	left      : -20%;
-	opacity   : 0.3;
-	transition: left 0.7s;
+	left   : -20%;
+	opacity: 0.3;
 }
 
 body.desktop .nav-menu:hover {
@@ -171,16 +170,11 @@ body.about .my-contacts {
 }
 
 .nav-menu__annotation {
-	background-color: #fff;
-	box-sizing      : border-box;
-	border-radius   : 3px;
-	color           : #000;
-	display         : none;
-	font-size       : 2.3rem;
-	opacity         : 0.7;
-	padding         : 0.5rem;
-	position        : absolute;
-	max-width       : 39rem;
+	color    : #000;
+	font-size: 1.7rem;
+	opacity  : 0.7;
+	position : absolute;
+	max-width: 39rem;
 }
 
 .description {
@@ -227,7 +221,7 @@ body.about .my-contacts {
 	display        : flex;
 	flex-shrink    : 0;
 	gap            : 10%;
-	height         : 13%;
+	height         : 10%;
 	justify-content: center;
 	width          : 35rem;
 	z-index        : 2;
@@ -335,8 +329,6 @@ body.about .my-contacts {
 
 .site-on-device_desktop {
 	height                : 100%;
-	position              : absolute;
-	top                   : 0;
 	width                 : 100%;
 	/* background-image   : url(../img/desktop.svg);
 	height                : 1164px; */
@@ -352,7 +344,7 @@ body.about .my-contacts {
 	height   : 100%;
 	/* top   : 1.9%;
 	left     : 1.2%; */
-	width    : 1920px;
+	width    : 100%;
 }
 
 /* /styles for devices */
