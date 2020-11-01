@@ -159,7 +159,6 @@ body.about .my-contacts {
 	letter-spacing: 0.03em;
 	overflow-wrap : break-word;
 	position      : relative;
-	transition    : 0.7s;
 }
 
 .nav-menu__item_active {
@@ -174,9 +173,11 @@ body.about .my-contacts {
 .nav-menu__annotation {
 	background-color: #fff;
 	box-sizing      : border-box;
+	border-radius   : 3px;
 	color           : #000;
 	display         : none;
 	font-size       : 2.3rem;
+	opacity         : 0.7;
 	padding         : 0.5rem;
 	position        : absolute;
 	max-width       : 39rem;
@@ -270,9 +271,11 @@ body.about .my-contacts {
 }
 
 .selected-device {
-	align-items: center;
-	display    : flex;
-	flex-grow  : 1;
+	align-items    : center;
+	display        : flex;
+	flex-grow      : 1;
+	justify-content: center;
+	width          : 100%;
 }
 
 .site-on-device {
@@ -331,20 +334,22 @@ body.about .my-contacts {
 }
 
 .site-on-device_desktop {
-	/* background-image: url(../img/desktop.svg);
-	height          : 1164px; */
-	height             : 100vh;
-	left               : 50%;
-	top                : 50%;
-	transform          : translate(-50%, -50%);
-	position           : absolute;
-	width              : 100vw;
-	/* width           : 1971px; */
+	height                : 100%;
+	position              : absolute;
+	top                   : 0;
+	width                 : 100%;
+	/* background-image   : url(../img/desktop.svg);
+	height                : 1164px; */
+	/* left               : 50%;
+	top                   : 50%;
+	transform             : translate(-50%, -50%);
+	position              : absolute; */
+	/* width              : 1971px; */
 }
 
 .site-on-device_desktop .iframe-wrapper {
 	border   : none;
-	height   : 1024px;
+	height   : 100%;
 	/* top   : 1.9%;
 	left     : 1.2%; */
 	width    : 1920px;
@@ -470,16 +475,12 @@ body.about .my-contacts {
 		font-size: 8px;
 	}
 
-	.site-on-device_phone {
-		transform: scale(0.8);
-	}
-
 	.site-on-device_tablet {
-		transform: translate(-50%, -50%) scale(0.6);
+		transform: translate(-50%, -50%) scale(0.7);
 	}
 
-	.site-on-device_desktop {
-		transform: translate(-50%, -50%) scale(0.4);
+	.site-on-device_phone {
+		transform: scale(0.9);
 	}
 }
 
