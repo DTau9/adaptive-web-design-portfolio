@@ -2,7 +2,7 @@ const $body = $('body');
 const $navMenu = $('.nav-menu');
 const $description = $('.description');
 const $viewSite = $('.view-site');
-const $sections = $($navMenu).add($description).add($viewSite);
+const $sections = $($navMenu).add($viewSite);
 const $navMenuItems = $('.nav-menu__item');
 const $contents = $('.content');
 const $iconSelectDevice = $('.device-switcher__item ');
@@ -13,14 +13,14 @@ const shiftToZero = 'animated-section_shifted';
 const visibilityVisible = 'visibility-visible';
 
 const state = {
-	section: 'lmarkt',
+	section: 'contacts',
 	device: 'phone'
 };
 const config = {
+	contacts: ['about'],
 	lmarkt: ['phone', 'tablet', 'desktop'],
 	russgaz: ['phone', 'tablet', 'desktop'],
 	kvast: ['desktop'],
-	contacts: ['about'],
 	techtask: ['tt']
 };
 
@@ -104,7 +104,7 @@ function setDeviceState(deviceName) {
 
 // класс с transition накидываем после загрузки документа
 $(document).ready(function () {
-	setSectionState('lmarkt');
+	setSectionState('contacts');
 	$sections.addClass('animated-section');
 	$sections.addClass(shiftToZero);
 })

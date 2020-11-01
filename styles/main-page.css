@@ -79,9 +79,7 @@ body.desktop .nav-menu:hover {
 }
 
 body.about .view-site {
-	width           : calc(100vw - var(--nav-menu_width));
-	background-color: var(--description_bg);
-	outline         : 1000rem solid var(--description_bg);
+	width: calc(100vw - var(--nav-menu_width));
 }
 
 body.tt .view-site {
@@ -138,7 +136,7 @@ body.about .my-contacts {
 	gap            : 7.7rem;
 	justify-content: flex-start;
 	padding-right  : 5.4%;
-	padding        : 12.1rem 4% 0 2.3%;
+	padding        : 12.1rem 3% 0 2.3%;
 	width          : var(--nav-menu_width);
 	z-index        : 10;
 }
@@ -178,9 +176,8 @@ body.about .my-contacts {
 }
 
 .description {
-	padding       : 10.6rem 4.2% 0 23.1%;
-	/* text-shadow: 0.2vw 0.2vw lightsteelblue; */
-	width         : var(--description_width);
+	padding: 10.6rem 4.2% 0 23.1%;
+	width  : var(--description_width);
 }
 
 .description ul {
