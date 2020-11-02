@@ -393,19 +393,19 @@ body.about .my-contacts {
 
 
 .socialnet__item_github {
-	background-image: url(../img/github_black_circle.svg);
+	background-image: url(../img/icons/github_black_circle.svg);
 }
 
 .socialnet__item_telegram {
-	background-image: url(../img/telegram_black_circle.svg);
+	background-image: url(../img/icons/telegram_black_circle.svg);
 }
 
 .socialnet__item_linkedin {
-	background-image: url(../img/linkedin_black_circle.svg);
+	background-image: url(../img/icons/linkedin_black_circle.svg);
 }
 
 .socialnet__item_mail {
-	background-image: url(../img/mail_black_circle.svg);
+	background-image: url(../img/icons/mail_black_circle.svg);
 	background-size : 7rem;
 }
 
