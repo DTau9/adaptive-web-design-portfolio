@@ -163,16 +163,26 @@ body.about .my-contacts {
 	cursor: default;
 }
 
+.nav-menu__item_name {
+	pointer-events: none;
+}
+
 .nav-menu__item:hover .nav-menu__annotation {
 	display: block;
 }
 
+.nav-menu__item_icon {
+	display       : none;
+	pointer-events: none;
+}
+
 .nav-menu__annotation {
-	color    : #000;
-	font-size: 1.7rem;
-	opacity  : 0.7;
-	position : absolute;
-	max-width: 39rem;
+	color         : #000;
+	font-size     : 1.7rem;
+	opacity       : 0.7;
+	pointer-events: none;
+	position      : absolute;
+	max-width     : 39rem;
 }
 
 .description {
@@ -182,20 +192,19 @@ body.about .my-contacts {
 
 .description ul {
 	font-size  : 3rem;
-	line-height: 4rem;
+	line-height: 1.3em;
 	list-style : none;
 	padding    : 0;
 }
 
 .description ul li {
 	letter-spacing: 0.05em;
-	margin-bottom : 3.6rem;
+	margin-bottom : 1.2em;
 }
 
 .description ul ul {
-	margin-top  : 3.3rem;
-	line-height : 2rem;
-	padding-left: 2rem;
+	margin-top  : 1.2em;
+	padding-left: 1em;
 }
 
 .description::after {
@@ -350,7 +359,6 @@ body.about .my-contacts {
 	box-sizing: border-box;
 	height    : 100%;
 	visibility: hidden;
-	padding   : 1rem 2rem;
 	position  : absolute;
 	width     : 100%;
 }
@@ -380,7 +388,7 @@ body.about .my-contacts {
 .socialnet__item {
 	background-repeat  : no-repeat;
 	background-position: center;
-	background-size    : 7rem;
+	background-size    : contain;
 	display            : block;
 	height             : 9rem;
 	opacity            : 0.5;
@@ -405,15 +413,19 @@ body.about .my-contacts {
 }
 
 .socialnet__item_mail {
-	background-image: url(../img/icons/mail_black_circle.svg);
+	background-image: url(../img/icons/email_black_circle.svg);
 	background-size : 7rem;
 }
 
-.contacts__photo {
+.my-contacts__photo {
 	border-radius: 2rem;
 	background   : url(../img/photo_dt.jpg) center/contain no-repeat;
 	height       : 50rem;
 	width        : 50rem;
+}
+
+.swipe-from-bottom {
+	display: none;
 }
 
 /* анимация секций */
@@ -459,7 +471,7 @@ body.about .my-contacts {
 	visibility: visible;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1600px) and (min-width: 1251) {
 	html {
 		font-size: 8px;
 	}
@@ -478,9 +490,179 @@ body.about .my-contacts {
 		display: block;
 	}
 
-	.nav-menu,
+	/* .nav-menu,
 	.description,
 	.view-site {
 		display: none;
+	} */
+
+	body {
+		height  : 100vh;
+		position: relative;
+	}
+
+	.nav-menu {
+		bottom         : 1.8rem;
+		flex-direction : row;
+		gap            : unset;
+		height         : 6rem;
+		justify-content: space-around;
+		padding        : 0%;
+		width          : 100%;
+	}
+
+	.nav-menu::after {
+		display: none;
+	}
+
+	.nav-menu__item {
+		width: 6rem;
+	}
+
+	.nav-menu__item[data-item="kvast"] {
+		display: none;
+	}
+
+	.nav-menu__item_icon {
+		background-position: center;
+		background-size    : contain;
+		background-repeat  : no-repeat;
+		display            : block;
+		height             : 100%;
+	}
+
+	.nav-menu__item_icon-contacts {
+		background-image: url(../img/favicon.png);
+	}
+
+	.nav-menu__item_icon-lmarkt {
+		background-image: url(../img/icons/logo_lmarkt.svg);
+	}
+
+	.nav-menu__item_icon-russgaz {
+		background-image: url(../img/icons/logo_russgaz.png);
+	}
+
+	.nav-menu__item_icon-techtask {
+		background-image: url(../img/icons/task.svg);
+	}
+
+	.nav-menu__item_name {
+		display: none;
+	}
+
+	.nav-menu__annotation {
+		display: block;
+	}
+
+	.description {
+		background-color: var(--description_bg);
+		bottom          : -23rem;
+		height          : 25rem;
+		left            : 0;
+		opacity         : 0.97;
+		padding         : 0;
+		width           : 100%;
+		z-index         : 20;
+	}
+
+	.description::after {
+		display: none;
+	}
+
+	.swipe-from-bottom {
+		background-color: blue;
+		top             : 0rem;
+		display         : block;
+		height          : 2rem;
+		position        : absolute;
+		width           : 100%;
+		z-index         : 99;
+	}
+
+	.swipe-from-bottom.animated-section_shifted {
+		bottom: 10rem;
+	}
+
+	.description ul {
+		font-size  : 1rem;
+		margin     : 4.7em 3.1em 0;
+		line-height: 1.2em;
+	}
+
+	.description ul ul {
+		margin: 1.2em 0;
+	}
+
+	.description.swipe-up {
+		bottom: 10rem;
+	}
+
+	.swipe-from-bottom.swipe-up {
+		bottom: 32rem;
+	}
+
+	body.about .view-site,
+	body.phone .view-site,
+	body.tablet .view-site,
+	body.desktop .view-site,
+	body.tt .view-site {
+		width: 100%;
+	}
+
+	.view-site {
+		bottom    : 10.1rem;
+		height    : unset;
+		min-height: unset;
+		top       : 0;
+	}
+
+	.device-switcher {
+		display: none;
+	}
+
+	.selected-device {
+		height  : 100%;
+		position: absolute;
+	}
+
+	.site-on-device_phone {
+		background-image: none;
+		height          : 100%;
+		width           : 100%;
+	}
+
+	.site-on-device_phone .iframe-wrapper {
+		border: none;
+		height: 100%;
+		left  : 0;
+		top   : 0;
+		width : 100%;
+	}
+
+	.my-contacts {
+		justify-content: flex-start;
+	}
+
+	.my-contacts__photo {
+		height: 32rem;
+		width : 32rem;
+	}
+
+	.socialnet {
+		gap            : unset;
+		justify-content: space-around;
+		margin-top     : 3.2rem;
+		width          : 100%;
+	}
+
+	.socialnet__item {
+		background-size: contain;
+		height         : 5rem;
+		width          : 5rem;
+	}
+
+	.technical-task {
+		padding: 0;
 	}
 }

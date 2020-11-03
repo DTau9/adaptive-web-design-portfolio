@@ -9,8 +9,10 @@ const $iconSelectDevice = $('.device-switcher__item ');
 const $iframeContainer = $('.site-on-device')
 const $iframe = $('.iframe-wrapper');
 const $iframeForTechnicalTask = $('.technical-task iframe');
+const $swipeFromBottom = $('.swipe-from-bottom');
 const shiftToZero = 'animated-section_shifted';
 const visibilityVisible = 'visibility-visible';
+const swipeUp = 'swipe-up';
 
 const state = {
 	section: 'contacts',
@@ -33,6 +35,7 @@ function updateApp() {
 		$description.removeClass(shiftToZero);
 		$viewSite.removeClass(shiftToZero);
 		$iconSelectDevice.removeClass('device-switcher__item_active');
+		$description.remove(swipeUp);
 		$navMenuItems.filter('[data-item=' + state.section + ']').addClass('nav-menu__item_active');
 		$iconSelectDevice.filter('[data-device=' + state.device + ']').addClass('device-switcher__item_active');
 	}
@@ -125,4 +128,15 @@ $iconSelectDevice.click(function (e) {
 	const deviceName = $jQeryNode.attr('data-device');
 	setDeviceState(deviceName);
 })
-// !-------------------          ----------                -
+
+$swipeFromBottom.click(function (e) {
+	$description.toggleClass(swipeUp);
+})
+
+
+$swipeFromBottom.swipe({
+	swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+
+		console.log("You swiped " + direction);
+	}
+});
