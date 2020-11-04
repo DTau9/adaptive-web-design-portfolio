@@ -168,10 +168,6 @@ body.about .my-contacts {
 	pointer-events: none;
 }
 
-.nav-menu__item:hover .nav-menu__annotation {
-	display: block;
-}
-
 .nav-menu__item_icon {
 	display       : none;
 	pointer-events: none;
@@ -180,10 +176,11 @@ body.about .my-contacts {
 .nav-menu__annotation {
 	color         : #000;
 	font-size     : 1.7rem;
+	max-width     : 82%;
 	opacity       : 0.7;
 	pointer-events: none;
 	position      : absolute;
-	max-width     : 82%;
+	top           : 100%;
 }
 
 .description {
@@ -498,13 +495,14 @@ body.about .my-contacts {
 	}
 
 	.nav-menu {
-		bottom         : 1.8rem;
-		flex-direction : row;
-		gap            : unset;
-		height         : 5rem;
-		justify-content: space-around;
-		padding        : 0;
-		width          : 100%;
+		background-color: #fff;
+		bottom          : 0;
+		flex-direction  : row;
+		gap             : unset;
+		height          : 7.5rem;
+		justify-content : space-around;
+		padding         : 0;
+		width           : 100%;
 	}
 
 	.nav-menu::after {
@@ -548,18 +546,18 @@ body.about .my-contacts {
 	}
 
 	.nav-menu__annotation {
-		display: block;
+		display: none;
 	}
 
 	.description {
 		background-color: transparent;
-		bottom          : -25rem;
+		bottom          : -18rem;
 		height          : 27rem;
 		left            : 0;
 		opacity         : 0.98;
 		padding         : 0;
 		width           : 100%;
-		z-index         : 20;
+		z-index         : 9;
 	}
 
 	.description::after {
@@ -679,7 +677,7 @@ body.about .my-contacts {
 
 	.description.swipe-up {
 		background-color: var(--description_bg);
-		bottom          : 8.7rem;
+		bottom          : 9.7rem;
 	}
 
 	body.about .view-site,
@@ -691,7 +689,7 @@ body.about .my-contacts {
 	}
 
 	.view-site {
-		bottom    : 8.7rem;
+		bottom    : 9.7rem;
 		height    : unset;
 		min-height: unset;
 		top       : 0;
