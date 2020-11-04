@@ -9,7 +9,7 @@ const $iconSelectDevice = $('.device-switcher__item ');
 const $iframeContainer = $('.site-on-device')
 const $iframe = $('.iframe-wrapper');
 const $iframeForTechnicalTask = $('.technical-task iframe');
-const $swipeFromBottom = $('.swipe-from-bottom');
+const $swipeDescription = $('.swipe-description');
 const shiftToZero = 'animated-section_shifted';
 const visibilityVisible = 'visibility-visible';
 const swipeUp = 'swipe-up';
@@ -26,8 +26,25 @@ const config = {
 	techtask: ['tt']
 };
 
+// решение, чтобы спрятать кнопку свайпа при загрузке(плохое)
+if (screen.width <= 1250 && !config[state.section].includes('phone')) {
+	$description.css('display', 'none')
+}
+
 // обновление приложения
 function updateApp() {
+	// отображение секции описания в "мобильном" виде
+	if (screen.width <= 1250) {
+		if (config[state.section].includes('phone')) {
+			$description.css('display', 'block');
+		} else {
+			setTimeout(function () {
+				$description.css('display', 'none')
+			}, 700)
+		}
+	}
+
+
 	if ($body.hasClass(state.section) && $body.hasClass(state.device)) {
 		return;
 	} else {
@@ -35,11 +52,10 @@ function updateApp() {
 		$description.removeClass(shiftToZero);
 		$viewSite.removeClass(shiftToZero);
 		$iconSelectDevice.removeClass('device-switcher__item_active');
-		$description.remove(swipeUp);
+		$description.removeClass(swipeUp);
 		$navMenuItems.filter('[data-item=' + state.section + ']').addClass('nav-menu__item_active');
 		$iconSelectDevice.filter('[data-device=' + state.device + ']').addClass('device-switcher__item_active');
 	}
-
 
 	// отложенный код
 	setTimeout(function () {
@@ -66,12 +82,13 @@ function updateApp() {
 			for (let i = 0; i < availableDevices.length; i++) {
 				if (availableDevices[i] === deviceSwitcherItemType) {
 					$deviceSwitcherItem.addClass('device-switcher__item_visible');
-					break
+					break;
 				} else {
 					$deviceSwitcherItem.removeClass('device-switcher__item_visible');
 				}
 			}
 		})
+
 
 		//условие для технических задач
 		$iframeForTechnicalTask.attr('src', state.urlSite);
@@ -129,14 +146,16 @@ $iconSelectDevice.click(function (e) {
 	setDeviceState(deviceName);
 })
 
-$swipeFromBottom.click(function (e) {
+$swipeDescription.click(function (e) {
 	$description.toggleClass(swipeUp);
 })
 
-
-$swipeFromBottom.swipe({
-	swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-
-		console.log("You swiped " + direction);
-	}
-});
+$swipeDescription.swipe({
+	swipeUp: function (event, direction, distance, duration, fingerCount) {
+		$description.addClass(swipeUp);
+	},
+	swipeDown: function (event, direction, distance, duration, fingerCount) {
+		$description.removeClass(swipeUp);
+	},
+	threshold: 5 //дистанция движения пальца по дисплею
+})
