@@ -30,6 +30,13 @@ const config = {
 if (screen.width <= 1250 && !config[state.section].includes('phone')) {
 	$description.css('display', 'none')
 }
+// спрятать кнопку свайпа при изменнении ширины окна
+$(window).resize(function () {
+	console.log(screen.width)
+	if (screen.width <= 1250 && !config[state.section].includes('phone')) {
+		$description.css('display', 'none')
+	}
+});
 
 // обновление приложения
 function updateApp() {
