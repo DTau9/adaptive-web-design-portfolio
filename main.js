@@ -27,15 +27,18 @@ const config = {
 };
 
 // решение, чтобы спрятать кнопку свайпа при загрузке(плохое)
-if (screen.width <= 1250 && !config[state.section].includes('phone')) {
-	$description.css('display', 'none')
-}
-// спрятать кнопку свайпа при изменнении ширины окна
-$(window).resize(function () {
-	console.log(screen.width)
+function descriptionHide() {
 	if (screen.width <= 1250 && !config[state.section].includes('phone')) {
 		$description.css('display', 'none')
 	}
+}
+
+descriptionHide();
+
+// спрятать кнопку свайпа при изменнении ширины окна
+$(window).resize(function () {
+	console.log(screen.width)
+	descriptionHide()
 });
 
 // обновление приложения
