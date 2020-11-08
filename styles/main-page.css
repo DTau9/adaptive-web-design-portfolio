@@ -496,10 +496,10 @@ body.about .my-contacts {
 
 	.nav-menu {
 		background-color: #fff;
-		bottom          : 0;
+		bottom          : 3rem;
 		flex-direction  : row;
 		gap             : unset;
-		height          : 7.5rem;
+		height          : 5rem;
 		justify-content : space-around;
 		padding         : 0;
 		width           : 100%;
@@ -551,13 +551,13 @@ body.about .my-contacts {
 
 	.description {
 		background-color: transparent;
-		bottom          : -18rem;
+		bottom          : -24.2rem;
 		height          : 27rem;
 		left            : 0;
 		opacity         : 0.98;
 		padding         : 0;
 		width           : 100%;
-		z-index         : 9;
+		z-index         : 15;
 	}
 
 	.description::after {
@@ -582,7 +582,6 @@ body.about .my-contacts {
 		height         : 4rem;
 		justify-content: center;
 		width          : 100%;
-		z-index        : 99;
 	}
 
 	.arrow-up {
